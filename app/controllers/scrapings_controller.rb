@@ -1,5 +1,5 @@
 class ScrapingsController < ApplicationController
-  # require 'mechanize'
+  require 'mechanize'
 
   def index
     agent = Mechanize.new
