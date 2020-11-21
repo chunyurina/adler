@@ -13,8 +13,8 @@
       .loginField
         .loginField__label--normal
           = f.label :password
-          %p (英数字8文字以上)
+          %h (英数字8文字以上)
         .loginField__input--normal
           = f.password_field :password, autocomplete: "off"
-      .actions
-        = f.submit "Log in", class: 'UserButton'
+      .loginactions
+        = f.submit "Log in", class: 'loginButton'

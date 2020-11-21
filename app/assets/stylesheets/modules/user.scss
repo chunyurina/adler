@@ -1,12 +1,12 @@
 // ログイン画面
-.AccountPage {
+.loginPage {
   width: 100%;
   margin: 60px 0px;
   padding: 60px 0px;
   border: 1px solid #ddd;
 }
 
-.AccountPage__title {
+.loginPage__title {
   width: 100%;
   font-size: 14px;
   font-weight: 200;
@@ -24,21 +24,21 @@
   }
 }
 
-.AccountPage__form {
+.loginPage__form {
   width: 100%;
   .new_user{
     text-align: center;
   }
 }
 
-.FormField {
+.loginField {
   width: 100%;
   margin-bottom: 10px;
   &__label--normal {
     letter-spacing: 1px;
     font-size: 14px;
     text-align: center;
-    i {
+    h {
       font-size: 11px;
     }
   }
@@ -51,9 +51,9 @@
   }
 }
 
-.actions {
+.loginactions {
   margin-top: 50px;
-  .UserButton {
+  .loginButton {
     line-height: 50px;
     letter-spacing: 1px;
     text-align: center;
