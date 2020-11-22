@@ -1,75 +1,86 @@
-.AccountPage
-  .AccountPage__title
+.SignupPage
+  .SignupPage__title
     %h2 新規登録
     = render "devise/shared/links"
-  .AccountPage__form
+  .SignupPage__form
     = form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f|
       = devise_error_messages!
-      .FormField
-        .FormField__label--normal
-          = f.label :ニックネーム 
-          .FormField__input--normal-need 必須
-        .FormField__input--normal
-          = f.text_field :name, autofocus: true
-      .FormField
-        .FormField__label--normal
-          = f.label :メールアドレス
-          .FormField__input--normal-need 必須
-        .FormField__input--normal
-          = f.email_field :email
-      .FormField
-        .FormField__label--normal
-          = f.label :パスワード
-          %br (英数字8文字以上)
-          .FormField__input--normal-need 必須
-        .FormField__input--normal
-          = f.password_field :password, autocomplete: "off"
-      .FormField
-        .FormField__label--normal
-          = f.label :パスワード
-          %br (確認用)
-          .FormField__input--normal-need 必須
-        .FormField__input--normal
-          = f.password_field :password_confirmation, autocomplete: "off"
 
- 
-      .AccountPage__title__user
+      .SignupField
+        .SignupField__label   
+          .SignupField__label--name
+            = f.label :ニックネーム
+            .SignupField__need 必須
+            .SignupField__input--name
+              = f.text_field :name, autofocus: true
+       
+      .SignupField
+        .SignupField__label
+          .SignupField__label--name
+            = f.label :メールアドレス
+            .SignupField__need 必須
+            .SignupField__input--name
+              = f.email_field :email
+
+      .SignupField
+        .SignupField__label  
+          .SignupField__label--name
+            = f.label :パスワード
+            %br (英数字8文字以上)
+            .SignupField__need 必須
+            .SignupField__input--name
+              = f.password_field :password, autocomplete: "off"
+      
+      .SignupField
+        .SignupField__label
+          .SignupField__label--name
+            = f.label :パスワード
+            %br (確認用)
+            .SignupField__need 必須
+            .SignupField__input--name
+              = f.password_field :password_confirmation, autocomplete: "off"
+
+      .SignupPage__title__user
         %h3 お客様情報
-      .Customer
-        .FormField_name
-          .FormField__label--name
+      .SignupField
+        .SignupField__label
+          .SignupField__label--name
             = f.label :名字
-            .FormField__need 必須
-            .FormField__input--name
+            .SignupField__need 必須
+            .SignupField__input--name
               = f.text_field :first_name, autofocus: true
-        .FormField_name2     
-          .FormField__label--name
+      .SignupField
+        .SignupField__label   
+          .SignupField__label--name
             = f.label :名前
-            .FormField__need 必須
-            .FormField__input--name
+            .SignupField__need 必須
+            .SignupField__input--name
               = f.text_field :last_name, autofocus: true
-      .Customer        
-        .FormField_name
-          .FormField__label--name
+       
+      .SignupField
+        .SignupField__label
+          .SignupField__label--name
             = f.label :名字（ふりがな）
-            .FormField__need 必須
-            .FormField__input--name
+            .SignupField__need 必須
+            .SignupField__input--name
               = f.text_field :first_name_kana, autofocus: true
-        .FormField_name2    
-          .FormField__label--name
+      .SignupField
+        .SignupField__label  
+          .SignupField__label--name
             = f.label :名前（ふりがな）
-            .FormField__need 必須
-            .FormField__input--name
+            .SignupField__need 必須
+            .SignupField__input--name
               = f.text_field :last_name_kana, autofocus: true
-      .Customer
-        .FormField_name
-          .FormField__label--name
+      
+      .SignupField
+        .SignupField__label
+          .SignupField__label--name
             = f.label :生年月日
-            .FormField__need 必須
-            .FormField__input--name
+            .SignupField__need 必須
+            .SignupField__input--name
               = f.text_field :birthday, autofocus: true
 
 
 
-      .actions
+      .Signupactions
         = f.submit "Create Account", class: 'UserButton'
