@@ -4,16 +4,16 @@
       .main-chat__header__group-info__member-list
         Member：
         .main-chat__header__group-info__member-list__member
-          - @group.users.each do |user|
-            =user.name
+          -# - @group.users.each do |user|
+          -#   =user.name
 
-    =link_to 'Edit',edit_group_path(@group), class: "main-chat__header__group-info__edit"
+    -# =link_to 'Edit',edit_group_path(@group), class: "main-chat__header__group-info__edit"
 
   .main-chat__list
-    = render @messages
+    -# = render @messages
         
   .main-chat__message-form
-    = form_with model: [@group, @message], html: {class: "new_message"}, local: true do |f|
+    -# = form_with model: [@group, @message], html: {class: "new_message"}, local: true do |f|
       .input-box
         = f.text_field :content, class: 'input-box__text', placeholder: 'type a message'
         = f.label :image, class: 'input-box__image' do
