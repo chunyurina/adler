@@ -26,7 +26,7 @@
         .SignupField__label  
           .SignupField__label--name
             = f.label :パスワード
-            %br (英数字8文字以上)
+            %i (英数字8文字以上)
             .SignupField__need 必須
             .SignupField__input--name
               = f.password_field :password, autocomplete: "off"
@@ -35,7 +35,7 @@
         .SignupField__label
           .SignupField__label--name
             = f.label :パスワード
-            %br (確認用)
+            %i (確認用)
             .SignupField__need 必須
             .SignupField__input--name
               = f.password_field :password_confirmation, autocomplete: "off"
