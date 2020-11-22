@@ -10,6 +10,28 @@
     -# =link_to 'Edit',edit_group_path(@group), class: "main-chat__header__group-info__edit"
 
   .main-chat__list
+    .first-box
+      .first-box_question
+        = f.collection_select :item_status_id,ItemStatus.all, :id, :name,{include_blank: "選択してください"},  {class: "details_select"}
+      .first-box_anser
+        YES 
+
+    .second-box
+      .second-box_question
+        あなたは今活動的ですか？
+      .second-box_anser
+        NO
+    
+    .third-box
+      .third-box_question
+        あなたは今朝起きるの辛いですか？
+      .third-box_anser
+        YES
+
+    .article-proposal
+      あなたに最適な記事はこちら！！
+      %br
+      http//www/yamada.com
     -# = render @messages
         
   .main-chat__message-form
