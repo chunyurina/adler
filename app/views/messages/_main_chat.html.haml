@@ -2,18 +2,29 @@
   .main-chat__header
     .main-chat__header__group-info
       .main-chat__header__group-info__member-list
-        Member：
+        - if user_signed_in?
+          .main-chat__header__group-info__member-list__welcome
+          ようこそ
         .main-chat__header__group-info__member-list__member
           -# - @group.users.each do |user|
           -#   =user.name
-
-    -# =link_to 'Edit',edit_group_path(@group), class: "main-chat__header__group-info__edit"
-
+      .main-chat__header__group-info__user
+        - if user_signed_in?
+          .main-chat__header__group-info__user__mypage-btn
+            = link_to mypage_path(current_user.id) do
+              マイページ
+        - else
+          .main-chat__header__group-info__user__login-btn
+            = link_to user_session_path do
+              ログイン
+          .main-chat__header__group-info__user__new-register-btn
+            = link_to new_user_registration_path do
+              新規会員登録
+       
   .main-chat__list
-    -# = render @messages
         
   .main-chat__message-form
-    -# = form_with model: [@group, @message], html: {class: "new_message"}, local: true do |f|
+    = form_with html: {class: "new_message"}, local: true do |f|
       .input-box
         = f.text_field :content, class: 'input-box__text', placeholder: 'type a message'
         = f.label :image, class: 'input-box__image' do
