@@ -3,13 +3,14 @@ class ScrapingsController < ApplicationController
 
   def index
     agent = Mechanize.new
-    page = agent.get('https://www.jstage.jst.go.jp/browse/jjpsy/-char/ja')
-    @elements = page.search('//*[@id="most-popular-articles-list"]/li[1]')
-    # @elements.get_attribute(:href)
-    # # @elements = page.search('')
+    page = agent.get('https://smartlog.jp/')
+    # @elements = page
+    @elements = page.search()
+    # # @elements.get_attribute(:href)
+    # # # @elements = page.search('')
 
     @elements.each do |ele|
-      @hoge = ele.(:class => 'clickable_div')
+      @hoge = ele[:href]
       
     end
 
