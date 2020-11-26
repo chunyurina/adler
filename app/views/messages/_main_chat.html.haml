@@ -10,30 +10,43 @@
     -# =link_to 'Edit',edit_group_path(@group), class: "main-chat__header__group-info__edit"
 
   .main-chat__list
-    .first-box
-      .first-box_question
-        = f.collection_select :item_status_id,ItemStatus.all, :id, :name,{include_blank: "選択してください"},  {class: "details_select"}
-      .first-box_anser
-        YES 
+    = form_with model: @item, local: true do |f|
+      .first-box
+        .first-box_question
+          = Question.find(1).name
+        .first-box_answer
+          .yes-answer
+            YES/
+          .no-answer
+            NO
 
-    .second-box
-      .second-box_question
-        あなたは今活動的ですか？
-      .second-box_anser
-        NO
-    
-    .third-box
-      .third-box_question
-        あなたは今朝起きるの辛いですか？
-      .third-box_anser
-        YES
+      .second-box
+        - if @first == 1
+          .second-box_question
+            あなたは今活動的ですか？
+        - else
 
-    .article-proposal
-      あなたに最適な記事はこちら！！
-      %br
-      http//www/yamada.com
-    -# = render @messages
-        
+          .second-box_anser
+            NO
+      
+      .third-box
+        .third-box_question
+          あなたは今朝起きるの辛いですか？
+        .third-box_anser
+          YES
+
+      .article-proposal
+        あなたに最適な記事はこちら！！
+        %br
+        - if @first_answer + @second_answer + @third_answer == 0
+          = @article.url
+        - else
+      -# = render @messages
+
+
+
+
+
   .main-chat__message-form
     -# = form_with model: [@group, @message], html: {class: "new_message"}, local: true do |f|
       .input-box
