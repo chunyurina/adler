@@ -15,20 +15,20 @@
 // ------------------------------------------------------------
 //      my sql connection
 // ------------------------------------------------------------
-var mysql = require('mysql');
+// var mysql = require('mysql');
 
-// //DBの定義
-var dbConfig = {
-  host     : 'localhost', //接続先ホスト
-  user     : 'root',      //ユーザー名
-  password : '',    //パスワード
-  database : 'mike'     //DB名
-};
+// // //DBの定義
+// var dbConfig = {
+//   host     : 'localhost', //接続先ホスト
+//   user     : 'root',      //ユーザー名
+//   password : '',    //パスワード
+//   database : 'mike'  //DB名
+// };
 
 
-connection = mysql.createConnection(dbConfig);
-console.log('create mysql connection');
-console.log(connection);
+// connection = mysql.createConnection(dbConfig);
+// console.log('create mysql connection');
+// console.log(connection);
 
 // function handleDisconnect() {
 //     console.log('create mysql connection');
@@ -56,3 +56,35 @@ console.log(connection);
 // }
 
 // handleDisconnect();
+
+const express = require('express');
+const mysql = require('mysql');
+
+const app = express();
+
+const connection = mysql.createConnection({
+  host: 'localhost',
+  user: 'root',
+  password: '',
+  database: 'mike_development'
+});
+
+connection.connect((err) => {
+  if (err) {
+    console.log('error connecting: ' + err.stack);
+    return;
+  }
+  console.log(connection);
+});
+
+// app.get('/', (req, res) => {
+//   connection.query(
+//     'SELECT * FROM users',
+//     (error, results) => {
+//       console.log(results);
+//       // res.render('index.html.haml');
+//     }
+//   );
+// });
+
+app.listen(3000);
