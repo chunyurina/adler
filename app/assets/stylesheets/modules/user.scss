@@ -1,3 +1,85 @@
+// 新規登録画面
+.SignupPage {
+  width: 100%;
+  padding: 40px 0px;
+  border-radius: 5px;
+  h3 {
+    margin-top: 50px;
+    text-align: center;
+    font-weight: bold;
+  }
+  &__title{
+    width: 100%;
+    font-size: 14px;
+    font-weight: 200;
+    h2 {
+      text-align: center;
+      margin-bottom: 10px;
+      letter-spacing: 3px;
+      font-size: 40px;
+    }
+  }
+  &__form {
+    width: 100%;
+    .SignupField { 
+      height: 120px;
+      margin-bottom: 10px;
+      &__label {
+        display: flex;
+        justify-content: space-around;
+        &--name {
+          letter-spacing: 1px;
+          font-size: 14px;
+          font-weight: 200;
+          height: 30px;
+          i {
+            font-size: 12px;
+          }
+          
+        }
+      }
+      &__need {
+        background-color: red;
+        color: white;
+        font-size: 14px;
+        font-weight: 600;
+        line-height: 1.4em;
+        text-align: center;
+        padding-top: 1px;
+        width: 36px;
+      }
+        
+      &__input--name {
+        text-align: center;
+        input {
+          box-sizing: border-box;
+          width: 80vw;
+          padding: 10px;
+          letter-spacing: 1px;
+          margin-top: 10px;
+        }
+      }
+    }
+    .Signupactions {
+      margin-top: 50px;
+      text-align: center;
+      .UserButton {
+        line-height: 50px;
+        letter-spacing: 1px;
+        text-align: center;
+        border: none;
+        text-decoration: none;
+        width: 200px;
+        background-color: #3CCACE;
+        color: #fff;  
+        
+        
+      }
+    }
+    
+  }
+}
+
 // ログイン画面
 .loginPage {
   width: 100%;
@@ -64,111 +146,6 @@
     color: #fff;  
   }
 }
-
-// 新規登録画面
-.Customer {
-  display: flex;
-  justify-content: flex-start;
-
-  .FormField_name { 
-    margin: 0 60px 10px 240px;
-    max-width: 600vw;
-    height: 100px;
-    .birth {   
-      box-sizing: border-box;
-      width: 100%;
-      padding: 10px;
-      letter-spacing: 1px;
-      margin: 10px 0 0 0;
-    .FormField__label--name {
-      letter-spacing: 1px;
-      font-size: 14px;
-      font-weight: 200;
-      height: 30px;
-       i {
-        font-size: 11px;  
-       }
-      }
-    }
-      .FormField__need {
-        background-color: red;
-        color: white;
-        font-size: 14px;
-        font-weight: 600;
-        line-height: 1.4em;
-        padding: 2px 3px;
-        width: 36px;
-      }
-    .FormField__input--name {
-      input {
-        box-sizing: border-box;
-        max-width: 300px;
-        padding: 10px;
-        letter-spacing: 1px;
-        margin-top: 10px;
-      }
-    }
-  }
-}
-
-.FormField_name2 { 
-  margin: 0 60px 10px 100px;
-  max-width: 600vw;
-  height: 100px;
-  .birth {   
-    box-sizing: border-box;
-    width: 100%;
-    padding: 10px;
-    letter-spacing: 1px;
-    margin: 10px 0 0 0;
-  .FormField__label--name {
-    letter-spacing: 1px;
-    font-size: 14px;
-    font-weight: 200;
-    height: 30px;
-     i {
-      font-size: 11px;  
-     }
-    }
-  }
-    .FormField__need {
-      background-color: red;
-      color: white;
-      font-size: 14px;
-      font-weight: 600;
-      line-height: 1.4em;
-      padding: 2px 3px;
-      width: 36px;
-    }
-  .FormField__input--name {
-    input {
-      box-sizing: border-box;
-      max-width: 300px;
-      padding: 10px;
-      letter-spacing: 1px;
-      margin-top: 10px;
-    }
-  }
-}
-    // .field_with_errors {
-    //   display: inline-block;
-    //   color: #d65f4c;
-    //   font-weight: 400;
-    // }
-    // . {
-    //   position: relative;
-
-    //   &:after {
-    //     content: "";
-    //     display: block;
-    //     position: absolute;
-    //     top: 0;
-    //     right: 0;
-    //     bottom: 0;
-    //     width: 5px;
-    //     background-color: #d65f4c;
-    //   }
-    // }
 
 #error_explanation {
   margin: 20px 0;
