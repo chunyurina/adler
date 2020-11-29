@@ -8,17 +8,16 @@
           -#   =user.name
 
     -# =link_to 'Edit',edit_group_path(@group), class: "main-chat__header__group-info__edit"
-
-  .main-chat__list
-    = form_with model: @messages local: true do |f|
+  = form_with model: @messages, local: true do |f|
+    .main-chat__list
       .first-box
         .first-box_question
           = Question.find(1).name
         .first-box_answer
           = f.collection_select :first_answer,Yesno.all, :id, :name,{include_blank: "選択してください"},  {class: "details_select"}
 
-      .answer
-        = f.submit "出品する", class: "answer-box"
+        .answer
+          = f.submit "回答する", class: "answer-box"
           -# .yes-answer
           -#   YES/
           -# .no-answer
@@ -51,11 +50,11 @@
 
 
 
-  .main-chat__message-form
-    -# = form_with model: [@group, @message], html: {class: "new_message"}, local: true do |f|
-      .input-box
-        = f.text_field :content, class: 'input-box__text', placeholder: 'type a message'
-        = f.label :image, class: 'input-box__image' do
-          = icon('far', 'image', class: 'Form__icon')
-          = f.file_field :image, class: 'input-box__image__file'
-      = f.submit 'Send', class: 'submit-btn'
+  -# .main-chat__message-form
+  -#   -# = form_with model: [@group, @message], html: {class: "new_message"}, local: true do |f|
+  -#     .input-box
+  -#       = f.text_field :content, class: 'input-box__text', placeholder: 'type a message'
+  -#       = f.label :image, class: 'input-box__image' do
+  -#         = icon('far', 'image', class: 'Form__icon')
+  -#         = f.file_field :image, class: 'input-box__image__file'
+  -#     = f.submit 'Send', class: 'submit-btn'
