@@ -62,29 +62,29 @@ const mysql = require('mysql');
 
 const app = express();
 
-const connection = mysql.createConnection({
-  host: 'localhost',
-  user: 'root',
-  password: '',
-  database: 'mike_development'
-});
-
-connection.connect((err) => {
-  if (err) {
-    console.log('error connecting: ' + err.stack);
-    return;
-  }
-  console.log(connection);
-});
-
-// app.get('/', (req, res) => {
-//   connection.query(
-//     'SELECT * FROM users',
-//     (error, results) => {
-//       console.log(results);
-//       // res.render('index.html.haml');
-//     }
-//   );
+// const connection = mysql.createConnection({
+//   host: 'localhost',
+//   user: 'root',
+//   password: '',
+//   database: 'mike_development'
 // });
+
+// connection.connect((err) => {
+//   if (err) {
+//     console.log('error connecting: ' + err.stack);
+//     return;
+//   }
+//   console.log(connection);
+// });
+
+app.get('/', (req, res) => {
+  // connection.query(
+  //   'SELECT * FROM users',
+  //   (error, results) => {
+  //     console.log(results);
+      res.send('welcometo to express');
+    // }
+  // );
+});
 
 app.listen(3000);

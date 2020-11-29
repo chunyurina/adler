@@ -10,15 +10,19 @@
     -# =link_to 'Edit',edit_group_path(@group), class: "main-chat__header__group-info__edit"
 
   .main-chat__list
-    = form_with model: @item, local: true do |f|
+    = form_with model: @messages local: true do |f|
       .first-box
         .first-box_question
           = Question.find(1).name
         .first-box_answer
-          .yes-answer
-            YES/
-          .no-answer
-            NO
+          = f.collection_select :first_answer,Yesno.all, :id, :name,{include_blank: "選択してください"},  {class: "details_select"}
+
+      .answer
+        = f.submit "出品する", class: "listing__button"
+          -# .yes-answer
+          -#   YES/
+          -# .no-answer
+          -#   NO
 
       .second-box
         - if @first == 1
