@@ -1,16 +1,16 @@
-class ScrapingsController < ApplicationController
+class Article < ApplicationRecord
+  
   require 'mechanize'
 
-  def index
+  def psychology_urls
     agent = Mechanize.new
     page = agent.get('https://www.jstage.jst.go.jp/browse/jjpsy/-char/ja')
     @elements = page.search('li .clickable_div')
 
     @elements.each do |ele|
-      @article = Scraping.new
-      @article = ele.inner_text
-      # article.save
+      article = Article.new
+      article.url = ele.inner_text
+      article.save
     end
-
   end
 end
