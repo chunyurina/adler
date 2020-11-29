@@ -18,7 +18,7 @@
           = f.collection_select :first_answer,Yesno.all, :id, :name,{include_blank: "選択してください"},  {class: "details_select"}
 
       .answer
-        = f.submit "出品する", class: "listing__button"
+        = f.submit "出品する", class: "answer-box"
           -# .yes-answer
           -#   YES/
           -# .no-answer
