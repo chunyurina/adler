@@ -16,11 +16,20 @@ class MessagesController < ApplicationController
 
   def create
     @message = Message.new(answer_params)
-    if @messages.save
-      redirect_to root_path, notice: "出品が完了しました"
+    if @message.save
+      redirect_to article_messages_path, notice: "出品が完了しました"
   else
-    render :new
+    redirect_to new_message_path
     flash.now[:alert] = "商品出品に失敗しました"
+  end
+
+  def article
+    @message = Message.find(1)
+    @first_answer = @message.first_answer
+    @second_answer = @message.second_answer
+    @third_answer = @message.third_answer
+    @total = @first_answer + @second_answer + @third_answer
+    @article = Article.find(1)
   end
 
   end

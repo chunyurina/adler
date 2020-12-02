@@ -8,7 +8,7 @@
           -#   =user.name
 
     -# =link_to 'Edit',edit_group_path(@group), class: "main-chat__header__group-info__edit"
-  = form_with model: @messages, local: true do |f|
+  = form_with model: @message, local: true do |f|
     .main-chat__list
       .first-box
         .first-box_question
@@ -30,10 +30,3 @@
 
         .answer
           = f.submit "回答する", class: "answer-box"
-
-      .article-proposal
-        あなたに最適な記事はこちら！！
-        %br
-        - if @message.present?
-          - if  @message.first_answer + @message.second_answer + @message.third_answer == 3
-            = @article.url
