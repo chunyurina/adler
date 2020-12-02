@@ -1,9 +1,9 @@
 Rails.application.routes.draw do
   devise_for :users
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
-  resources :messages, only: [:index, :create] do
+  resources :messages, only: [:index, :create, :new] do
     member do
-      get 'index', to: 'messages#index'
+      get 'article', to: 'messages#article'
     end
   end
   

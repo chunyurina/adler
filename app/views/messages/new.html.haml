@@ -1,0 +1,39 @@
+.main-chat
+  .main-chat__header
+    .main-chat__header__group-info
+      .main-chat__header__group-info__member-list
+        Member：
+        .main-chat__header__group-info__member-list__member
+          -# - @group.users.each do |user|
+          -#   =user.name
+
+    -# =link_to 'Edit',edit_group_path(@group), class: "main-chat__header__group-info__edit"
+  = form_with model: @messages, local: true do |f|
+    .main-chat__list
+      .first-box
+        .first-box_question
+          = Question.find(1).name
+        .first-box_answer
+          = f.collection_select :first_answer,Yesno.all, :id, :name,{include_blank: "選択してください"},  {class: "details_select"}
+
+      .second-box
+        .second-box_question
+          = Question.find(2).name
+        .secon-box_answer
+          = f.collection_select :second_answer,Yesno.all, :id, :name,{include_blank: "選択してください"},  {class: "details_select"}
+
+        .third-box
+          .third-box_question
+            = Question.find(3).name
+          .third-box_anser
+            = f.collection_select :third_answer,Yesno.all, :id, :name,{include_blank: "選択してください"},  {class: "details_select"}
+
+        .answer
+          = f.submit "回答する", class: "answer-box"
+
+      .article-proposal
+        あなたに最適な記事はこちら！！
+        %br
+        - if @message.present?
+          - if  @message.first_answer + @message.second_answer + @message.third_answer == 3
+            = @article.url

@@ -1,16 +1,22 @@
 class MessagesController < ApplicationController
   def index
-  @messages = Message.new
-  # @message = Message.find(1)
+  # @messages = Message.new
+  @messages = Message.all
+  # -if Message.find(1).persisted?
   # @first_answer = @message.first_answer
   # @second_answer = @message.second_answer
   # @third_answer = @message.third_answer
-  # @article = Article.find(1)
+  # end
+  @article = Article.find(1)
+  end
+
+  def new
+    @message = Message.new
   end
 
   def create
-    @messages = Message.new(answer_params)
-    if @item.save
+    @message = Message.new(answer_params)
+    if @messages.save
       redirect_to root_path, notice: "出品が完了しました"
   else
     render :new
@@ -22,7 +28,7 @@ class MessagesController < ApplicationController
   private
 
   def answer_params
-    params.require(:message).permit(:first_answer).merge(user_id: current_user.id)
+    params.require(:message).permit(:first_answer, :second_answer, :third_answer).merge(user_id: current_user.id)
   end
-  
+
 end

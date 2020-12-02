@@ -1,10 +1,10 @@
 class CreateMessages < ActiveRecord::Migration[6.0]
   def change
     create_table :messages do |t|
-      t.references :user, foreign_key: true, null: false
-      t.integer :first_answer, null: false
-      t.integer :second_answer, null:false
-      t.integer :third_answer, null: false
+      t.integer :user_id, null: false ,foreign_key: true
+      t.integer :first_answer
+      t.integer :second_answer
+      t.integer :third_answer
       t.timestamps
     end
   end

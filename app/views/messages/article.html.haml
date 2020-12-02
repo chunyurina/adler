@@ -1,0 +1,6 @@
+      .article-proposal
+        あなたに最適な記事はこちら！！
+        %br
+        - if @message.present?
+          - if  @message.first_answer + @message.second_answer + @message.third_answer == 3
+            = @article.url
