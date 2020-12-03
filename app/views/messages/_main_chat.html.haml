@@ -1,3 +1,22 @@
-.answer-button
-  = link_to new_message_path, class: 'answer-button-box' do
-    回答する
+.main-chat
+  .main-chat__header
+    .main-chat__header__group-info
+      .main-chat__header__group-info__member-list
+        - if user_signed_in?
+          .main-chat__header__group-info__member-list__welcome
+          ようこそ
+        .main-chat__header__group-info__member-list__member
+          -# - @group.users.each do |user|
+          -#   =user.name
+      .main-chat__header__group-info__user
+        - if user_signed_in?
+          .main-chat__header__group-info__user__mypage-btn
+            = link_to mypage_path(current_user.id) do
+              マイページ
+        - else
+          .main-chat__header__group-info__user__login-btn
+            = link_to user_session_path do
+              ログイン
+          .main-chat__header__group-info__user__new-register-btn
+            = link_to new_user_registration_path do
+              新規会員登録
