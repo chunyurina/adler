@@ -1,7 +1,14 @@
 Rails.application.routes.draw do
   devise_for :users
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
-  resources :messages, only: [:index, :create]
+
+  resources :messages, only: [:index, :create, :new] do
+    collection do
+      get 'article', to: 'messages#article'
+    end
+  end
+  
   resources :mypages, only: [:new, :show]
+
   root "messages#index"
 end
