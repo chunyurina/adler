@@ -12,6 +12,7 @@ class MessagesController < ApplicationController
 
   def new
     @message = Message.new
+    @first_question = Yesno.find(1, 2)
   end
 
   def create
@@ -24,7 +25,7 @@ class MessagesController < ApplicationController
   end
 
   def article
-    @message = Message.find(1)
+    @message = Message.last
     @first_answer = @message.first_answer
     @second_answer = @message.second_answer
     @third_answer = @message.third_answer
