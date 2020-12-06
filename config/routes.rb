@@ -1,9 +1,10 @@
 Rails.application.routes.draw do
   devise_for :users
 
-  resources :messages, only: [:index, :create, :new] do
+  resources :messages, only: [:index, :create, :new, :edit, :update] do
     collection do
       get 'article', to: 'messages#article'
+      get 'edit', to: 'messages#edit'
     end
   end
   

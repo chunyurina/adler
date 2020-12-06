@@ -5,6 +5,48 @@
       -if @total == 3
         = @article.url
 
+
+  -if @total == 111
+    = @article.find(1).name
+    %br
+    = @article.find(1).url
+
+  - if @total == 211
+    = @article.find(2).name
+    %br
+    = @article.find(2).url
+
+  - if @total == 121
+    = @article.find(3).name
+    %br
+    = @article.find(3).url
+
+  - if @total == 221
+    = @article.find(4).name
+    %br
+    = @article.find(4).url
+
+  - if @total == 112
+    = @article.find(5).name
+    %br
+    = @article.find(5).url
+
+  - if @total == 212
+    = @article.find(6).name
+    %br
+    = @article.find(6).url
+
+  - if @total == 122
+    = @article.find(7).name
+    %br
+    = @article.find(7).url
+
+  - if @total == 222
+    = @article.find(8).name
+    %br
+    = @article.find(8).url
+
   .home-buttton
     = link_to root_path, class: 'home-buttton--btn' do
       toppage
+
