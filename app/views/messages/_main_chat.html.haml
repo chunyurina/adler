@@ -1,22 +1,23 @@
-.main-chat
-  .main-chat__header
-    .main-chat__header__group-info
-      .main-chat__header__group-info__member-list
-        - if user_signed_in?
-          .main-chat__header__group-info__member-list__welcome
-          ようこそ
-        .main-chat__header__group-info__member-list__member
-          -# - @group.users.each do |user|
-          -#   =user.name
-      .main-chat__header__group-info__user
-        - if user_signed_in?
-          .main-chat__header__group-info__user__mypage-btn
-            = link_to mypage_path(current_user.id) do
-              マイページ
-        - else
-          .main-chat__header__group-info__user__login-btn
-            = link_to user_session_path do
-              ログイン
-          .main-chat__header__group-info__user__new-register-btn
-            = link_to new_user_registration_path do
-              新規会員登録
+.toppage
+  .header
+    - if user_signed_in?
+      .mypage
+        = link_to mypage_path(current_user.id), class: 'mypage--btn' do
+          マイページ
+    - else
+      .login
+        = link_to user_session_path, class: 'login--btn' do
+          ログイン
+      .registration
+        = link_to new_user_registration_path, class: 'registration--btn' do
+          新規登録
+  .main
+    - if user_signed_in?
+      .message
+        では右下の「回答する」ボタンを押して、
+        %br あなたに合った記事を探しにいきましょう
+    - else
+      %h1.message
+        ようこそ
+      .message
+        では新規登録からやりましょう

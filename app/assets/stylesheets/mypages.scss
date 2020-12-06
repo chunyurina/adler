@@ -1,50 +1,50 @@
-.main-p { 
-  img {
-    cursor: pointer;
-    height: 50px;
-    width: 50px;
-    border-radius: 30px;
-  }
-  background-color: #fff;
-  padding-right: 40px;
-  position: relative;
-  margin-top: 25px;
-  .profile-form{
+.Mypage {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-image: image-url("pexels-sadeep-sasanka-photography-2240000.jpg");
+  background-size: cover;
+  color: #fff;
+  text-shadow: 2px 2px 3px black;
+  .profile-header{
     text-align: center;
-    width: 100%;
-    height: 200px;
-    background-position: center;
-    background-size: cover;
-    .profile-header{
-      font-size: 24px;
-      padding: 8px 24px;
-    }
-    .profile-details {
-      .profile-name{
-        text-align: center;
-        margin: 0 auto;
-        font-size: 16px;
-        padding: 8px 24px;
-        height:150px;
-      }
-    } 
+    font-size: 30px;
+    font-weight: bold;
+    padding-bottom: 20px;
   }
-} 
-  .mypage-nav-list{
+  .profile-name{
+    text-align: center;
+    margin: 0 auto;
+    font-size: 20px;
+    padding: 8px 24px;
+    height:150px;
+    font-weight: bold;
+    &__form {
+      padding-top: 20px;
+    }
+    .user-icon {
+      cursor: pointer;
+    }
+  }
+  &__logout{
     padding: 16px;
     text-align: center;
-    &-item {
+    &--btn {
+      width: 120px;
       position: relative;
       display: block;
       text-align: center;
-      min-height: 48px;
       padding: 16px;
-      background-color: #ffffff;
-      font-size: 14px;
+      font-size: 20px;
       text-decoration: none;
-      color: black;
+      color: #fff;
+      border: 1px solid #fff;
     }
   }
+} 
+  
   
 
 

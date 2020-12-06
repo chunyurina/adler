@@ -3,133 +3,71 @@
 }
 
 .wrapper {
-  display: flex;;
-  text-decoration: none;
-
-  .main-chat {
-    width: 100%;
-
-
-    &__header{
-      background-color: #ffffff;
-      height: 100px;
-      padding: 0px 40px 0px 40px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      &__group-info{
-        width: 100%;
-        display: flex;
-        justify-content: space-between;
-        &_text{
-          color: #333333;
-          font-size: 20px;
-          margin-top: 35px;
-        }
-        &__member-list {
-          display: flex;
-          margin-top: 15px;
-          font-size: 12px;
-          color: #999;
-
-          &__member{
-            color: #999999;
-            font-size: 13px;
-            padding-right: 5px;
-          }
-        }
-        &__user{
-          display: flex;
-          a{
-          text-decoration: none;
-          color:black;
-          }
-          &__login-btn{
-            margin-right: 20px;
-          }
-        }
+.toppage {
+  height: 100vh;
+  width: 100vw;
+  background-image: image-url("sebastian-unrau-sp-p7uuT0tw-unsplash.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: top center;
+  .header {
+    position: relative;
+    display: flex;
+    text-decoration: none;
+    color: #fff;
+    height: 1%;
+    .mypage {
+      position: absolute;
+      top: 50px;
+      right: 20px;
+      &--btn {
+        font-size: 20px;
+        text-decoration: none;
+        color: #fff;
+        font-weight: bold;
+        text-shadow: 2px 2px 3px black;
+      }
+    }
+    .login{
+      position: absolute;
+      top: 50px;
+      right: 100px;
+      padding-right: 10px;
+      &--btn {
+        font-size: 20px;
+        text-decoration: none;
+        color: #fff;
+        font-weight: bold;
+        text-shadow: 2px 2px 3px black;
+      }
+    }
+    .registration {
+      position: absolute;
+      top: 50px;
+      right: 20px;
+      &--btn {
+        font-size: 20px;
+        text-decoration: none;
+        color: #fff;
+        font-weight: bold;
+        text-shadow: 2px 2px 3px black;
       }
       
-      .main-chat__header__group-info__edit {
-        padding: 0 20px;
-        height: 40px;
-        line-height: 40px;
-        color: #38aef0;
-        font-size: 16px;
-        text-decoration: none;
-        border: 1px solid #38AEF0;
-      }
     }
-
-    &__list {
-      background-color: #fafafa;
-      height: calc(100vh - 190px);
-      padding: 35px 40px 0px;
-      overflow: scroll;
+    
+  }
+  .main {
+    font-size: 25px;
+    font-family: "Source Sans Pro", Helvetica, Arial, "游ゴシック体", "YuGothic", "メイリオ", "Meiryo", sans-serif;
+    height: 99%;
+    text-shadow: 2px 2px 3px black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    .message {
+      color: #fff;
     }
-    .MessageBox{
-      margin-bottom: 46px;
-    }
-    .MessageInfo {
-      display: flex;
-      &__userName {
-        color: #333333;
-        font-size: 16px;
-        font-weight: bold;
-      }
-      &__date {
-        padding-left: 10px;
-        color: #999;
-        font-size: 12px;  
-      }
-    }
-    .Message {
-      margin-top: 12px;
-      color: #434A54;
-      font-size: 14px;
-    }
-
-    .main-chat__message-form {
-      background-color: #d2d2d2;
-      width: 100%;
-      height: 90px;
-      padding: 20px 40px;
-
-      form{
-        display: flex;
-        .input-box {
-          display: flex;
-          width: 100%;
-          position: relative;
-          &__text {
-            height: 50px;
-            width: 100%;
-            border-style: none;
-            padding: 0 45px 0 15px;
-          }
-          &__image {
-            position: absolute;
-            top: 10px;
-            right:10px;
-            cursor: pointer;
-            font-size: 1.3rem;
-          
-            &__file {
-              display: none;
-            }
-          }
-        }
-        .submit-btn {
-          width: 100px;
-          height: 50px;
-          padding: 0 30px;
-          margin-left: 15px;
-          background-color: #38aef0;
-          border: none;
-          color: white;
-          cursor: pointer;
-        }
-      }
-    }
+    
   }
 }
