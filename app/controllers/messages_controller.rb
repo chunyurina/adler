@@ -44,7 +44,7 @@ class MessagesController < ApplicationController
     @second_answer = @message.second_answer
     @third_answer = @message.third_answer
     @total = @first_answer + @second_answer + @third_answer
-    @article = Article.find(1)
+    @article = Article.all
   end
 
   end
