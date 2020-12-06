@@ -1,10 +1,10 @@
-.article-proposal
-  あなたに最適な記事はこちら！！
-  %br
+.article
+  .article-proposal
+    あなたに最適な記事はこちら！！
+    .article-proposal__url
+      -if @total == 3
+        = @article.url
 
-  -if @total == 3 
-    = @article.url
-
-.home-buttton
-  = link_to root_path do
-    トップページに戻る
+  .home-buttton
+    = link_to root_path, class: 'home-buttton--btn' do
+      toppage
