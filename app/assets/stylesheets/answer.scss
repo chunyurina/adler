@@ -1,0 +1,32 @@
+.answer {
+  text-shadow: 2px 2px 3px black;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+  height: 100vh;
+  background-image: image-url("pexels-marco-milanesi-2670898.jpg");
+  background-size: cover;
+  .first-box {
+    padding-bottom: 20px;
+  }
+  .second-box {
+    padding-bottom: 20px;
+  }
+  &-btn {
+    text-shadow: 2px 2px 3px black;
+    padding-top: 80px;
+    text-align: center;
+    .answer-box {
+      width: 120px;
+      padding: 16px;
+      font-size: 20px;
+      text-decoration: none;
+      color: #fff;
+      border: 1px solid #fff;
+      background-color:rgba(0,0,0,0);
+    }
+  }
+  
+}
