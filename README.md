@@ -17,26 +17,26 @@
 5. 3つの質問に回答する。
 ![トップページ](https://i.gyazo.com/b92f58e4d57ef23beb1aaddb19325348.jpg)
 
-# データベース設計
+## データベース設計
 
-## articleテーブル
+### articleテーブル
 |Column|Type|Options|
 |------|----|-------|
 |name|string|null: false|
 |url|string|null: false|
-### Association
+#### Association
 
-## messagesテーブル
+### messagesテーブル
 |Column|Type|Options|
 |------|----|-------|
 |user_id|integer|null: false, foreign_key: true|
 |first_answer|integer|null: false|
 |second_answer|integer|null: false|
 |third_answer|integer|null: false|
-### Association
+#### Association
 belongs_to: user
 
-## usersテーブル
+### usersテーブル
 |Column|Type|Options|
 |------|----|-------|
 |name|string|null: false|
@@ -47,7 +47,7 @@ belongs_to: user
 |first_name_kana|string|null: false|
 |last_name_kana|string|null: false|
 |building_name|string||
-### Association
+#### Association
 belongs_to: user
 
 ## 第三者の感想
