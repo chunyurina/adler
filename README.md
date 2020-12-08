@@ -15,7 +15,7 @@
 3. 表示されている質問に回答する。
 4. トップページ下部の「Question」ボタンをクリック。
 5. 3つの質問に回答する。
-![トップページ](https://gyazo.com/b92f58e4d57ef23beb1aaddb19325348)
+https://gyazo.com/b92f58e4d57ef23beb1aaddb19325348
 
 # データベース設計
 
