@@ -1,12 +1,6 @@
-.main-chat
-  .main-chat__header
-    .main-chat__header__group-info
-      .main-chat__header__group-info__member-list
-        Member：
+.answer
+  = form_with model: [@message], local: true do |f|
+    = f.text_area :memo, class: 'answer-form', placeholder: 'type a comment'
+    .answer-btn
+      = f.submit "answer", class: "answer-box"
 
-  = form_with model: @message, local: true do |f|
-    .main-chat__list
-      = f.text_area :memo, size: "60x5", class: "memo-box"
-
-      .answer
-        = f.submit "回答する", class: "answer-box"
