@@ -1,26 +1,5 @@
 .answer
-  = form_with model: @message, local: true do |f|
-    - if @message.first_answer == nil
-      .first-box
-        .first-box_question
-          = Question.find(1).name
-        .first-box_answer
-          = f.collection_select :first_answer,Yesno.all, :id, :name,{include_blank: "選択してください"},  {class: "details_select"}
-
-    - if @message.second_answer == nil
-      .first-box
-        .first-box_question
-          = Question.find(2).name
-        .first-box_answer
-          = f.collection_select :second_answer,Yesno.where(index: 2), :id, :name,{include_blank: "選択してください"},  {class: "details_select"}
-
-    -if @message.second_answer == 10 or @message.second_answer == 20
-      - if @message.third_answer == nil
-        .first-box
-          .first-box_question
-            = Question.find(3).name
-          .first-box_answer
-            = f.collection_select :third_answer,Yesno.where(index: 3), :id, :name,{include_blank: "選択してください"},  {class: "details_select"}
-
+  = form_with model: [@message], local: true do |f|
+    = f.text_field :content, class: 'answer-form', placeholder: 'type a comment'
     .answer-btn
       = f.submit "answer", class: "answer-box"
