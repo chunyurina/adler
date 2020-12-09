@@ -6,5 +6,10 @@
       .first-box_answer
         = f.collection_select :first_answer,Yesno.where(index: 1), :id, :name,{include_blank: "選択してください"},  {class: "details_select"}
 
+    .main-chat__list
+      .first-box_answer
+        = f.collection_select :category_id,Category.all, :id, :name,{include_blank: "選択してください"},  {class: "details_select"}
+
     .answer-btn
       = f.submit "answer", class: "answer-box"
+

@@ -1,5 +1,6 @@
 .answer
   = form_with model: [@message], local: true do |f|
-    = f.text_field :content, class: 'answer-form', placeholder: 'type a comment'
+    = f.text_area :memo, class: 'answer-form', placeholder: 'type a comment'
     .answer-btn
       = f.submit "answer", class: "answer-box"
+
