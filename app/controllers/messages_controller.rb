@@ -7,15 +7,17 @@ class MessagesController < ApplicationController
   def new
     @message = Message.new
     @first_question = Yesno.find(1, 2)
+    @category = Category.find(1)
   end
 
   def create
     @message = Message.new(answer_params)
+    @category = Category.find(1)
     if @message.save
       redirect_to edit_messages_path
-  else
-    redirect_to new_message_path
-  end
+    else
+      redirect_to new_message_path
+    end
 
   def edit
     @message = Message.last
@@ -24,8 +26,8 @@ class MessagesController < ApplicationController
   def update
     @message = Message.last
     @message.update(answer_params)
-      if @message.third_answer.present?
-          redirect_to article_messages_path
+      if @message.memo.present?
+          redirect_to root_path
       else
          redirect_to edit_messages_path
       end
@@ -45,7 +47,7 @@ class MessagesController < ApplicationController
   private
 
   def answer_params
-    params.require(:message).permit(:first_answer, :second_answer, :third_answer).merge(user_id: current_user.id)
+    params.require(:message).permit(:memo, :category_id).merge(user_id: current_user.id)
   end
 
   # -if Message.last.firsr_answer.present?

@@ -21,9 +21,8 @@ ActiveRecord::Schema.define(version: 2020_11_22_125040) do
 
   create_table "messages", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.integer "user_id", null: false
-    t.integer "first_answer"
-    t.integer "second_answer"
-    t.integer "third_answer"
+    t.text "memo"
+    t.integer "category_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
