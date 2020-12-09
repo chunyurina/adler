@@ -1,7 +1,6 @@
 class MessagesController < ApplicationController
   def index
   @messages = Message.all
-  @article = Article.find(1)
   end
 
   def new
@@ -42,7 +41,7 @@ class MessagesController < ApplicationController
     @article = Article.all
   end
 
-  end
+end
 
   private
 
