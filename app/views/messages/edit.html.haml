@@ -1,5 +1,8 @@
 .answer
-  = form_with model: [@message], local: true do |f|
+  .question
+    Q.あなたと同じ悩みを抱えている人がいるとすると、
+    %br あなたは何と助言しますか？
+  = form_with model: @message, local: true do |f|
     = f.text_area :memo, class: 'answer-form', placeholder: 'type a comment'
     .answer-btn
       = f.submit "answer", class: "answer-box"

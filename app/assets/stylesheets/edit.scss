@@ -9,10 +9,15 @@
   background-image: image-url("pexels-marco-milanesi-2670898.jpg");
   background-size: cover;
   padding: 20px 50px 20px 40px;
+  .question {
+    margin-bottom: 30px;
+    text-align: center;
+  }
   .answer-form {
     height: 40px;
     width: 400px;
     padding-left: 10px;
+    padding-top: 8px;
     .answer-btn {
       text-shadow: 2px 2px 3px black;
       padding-top: 80px;
