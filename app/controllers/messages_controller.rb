@@ -33,7 +33,13 @@ class MessagesController < ApplicationController
   end
 
   def article
-    @message = Message.where(category_id: 2)
+    @message = Message.last
+    @category1 = Message.where(category_id: 1)
+    @category2 = Message.where(category_id: 2)
+    @category3 = Message.where(category_id: 3)
+    @category4 = Message.where(category_id: 4)
+    @category5 = Message.where(category_id: 5)
+    @category6 = Message.where(category_id: 6)
   end
 
 end

@@ -2,8 +2,35 @@
   .article-proposal
     あなたに最適な記事はこちら！！
     .article-proposal__url
-      - @message.each do |m|
-        = m.memo
+      -if @message.category_id == 1
+        - @category1.each do |m|
+          = m.memo
+
+      -if @message.category_id == 2
+        - @category2.each do |m|
+          = m.memo
+
+      -if @message.category_id == 3
+        - @category3.each do |m|
+          = m.memo
+
+      -if @message.category_id == 4
+        - @category4.each do |m|
+          = m.memo
+
+      -if @message.category_id == 5
+        - @category5.each do |m|
+          = m.memo
+
+      -if @message.category_id == 6
+        - @category6.each do |m|
+          = m.memo
+
+
+
+
+
+
 
   .home-buttton
     = link_to root_path, class: 'home-buttton--btn' do
