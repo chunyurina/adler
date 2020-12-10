@@ -1,8 +1,15 @@
 .answer
   = form_with model: @message, local: true do |f|
-    .main-chat__list
-      .first-box_answer
-        = f.collection_select :category_id,Category.all, :id, :name,{include_blank: "選択してください"},  {class: "details_select"}
+    .adler-text
+      〜全ての悩みは対人関係である〜
+      .adler-name
+        アルフレッド・アドラー
+    .discription
+      あなたの悩みも行き着く先は対人関係のはずです
+      %br それでは下の選択肢からあなたの悩みに近いものを選んでください
+      
+    .first-box_answer
+      = f.collection_select :category_id,Category.all, :id, :name,{include_blank: "選択してください"},  {class: "details_select"}
 
     .answer-btn
       = f.submit "answer", class: "answer-box"

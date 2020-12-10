@@ -1,30 +1,37 @@
 .article
   .article-proposal
-    あなたに最適な記事はこちら！！
-    .article-proposal__url
+    みんなからのすとれすけしごむです
+    %br このけしごむであなたの悩みを消していきましょう
+    .article-proposal__opinion
       -if @message.category_id == 1
-        - @category1.each do |m|
-          = m.memo
+        - @category1.shuffle.first(5).each do |m|
+          %li
+            = m.memo
 
       -if @message.category_id == 2
-        - @category2.each do |m|
-          = m.memo
+        - @category2.shuffle.first(5).each do |m|
+          %li
+            = m.memo
 
       -if @message.category_id == 3
-        - @category3.each do |m|
-          = m.memo
+        - @category3.shuffle.first(5).each do |m|
+          %li
+            = m.memo
 
       -if @message.category_id == 4
-        - @category4.each do |m|
-          = m.memo
+        - @category4.shuffle.first(5).each do |m|
+          %li
+            = m.memo
 
       -if @message.category_id == 5
-        - @category5.each do |m|
-          = m.memo
+        - @category5.shuffle.first(5).each do |m|
+          %li
+            = m.memo
 
       -if @message.category_id == 6
-        - @category6.each do |m|
-          = m.memo
+        - @category6.shuffle.first(5).each do |
+          %li
+            = m.memo
 
 
 
