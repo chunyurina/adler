@@ -1,7 +1,9 @@
 .answer
   .question
     Q.あなたと同じ悩みを抱えている人がいるとすると、
-    %br あなたは何と助言しますか？
+    %br あなたはどんな
+    %b "すとれすけしごむ"
+    を渡しますか？
   = form_with model: @message, local: true do |f|
     = f.text_area :memo, class: 'answer-form', placeholder: 'type a comment'
     .answer-btn

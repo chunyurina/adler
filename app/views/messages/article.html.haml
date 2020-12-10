@@ -1,9 +1,11 @@
 .article
   .article-proposal
-    あなたに最適な記事はこちら！！
-    .article-proposal__url
+    みんなからのすとれすけしごむです
+    %br このけしごむであなたの悩みを消していきましょう
+    .article-proposal__opinion
       - @message.each do |m|
-        = m.memo
+        %li
+          = m.memo
 
   .home-buttton
     = link_to root_path, class: 'home-buttton--btn' do
