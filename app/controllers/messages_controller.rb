@@ -27,19 +27,14 @@ class MessagesController < ApplicationController
     @message = Message.last
     @message.update(answer_params)
       if @message.memo.present?
-          redirect_to root_path
+          redirect_to article_messages_path
       else
          redirect_to edit_messages_path
       end
   end
 
   def article
-    @message = Message.last
-    @first_answer = @message.first_answer
-    @second_answer = @message.second_answer
-    @third_answer = @message.third_answer
-    @total = @first_answer + @second_answer + @third_answer
-    @article = Article.all
+    @message = Message.where(category_id: 2)
   end
 
   end
