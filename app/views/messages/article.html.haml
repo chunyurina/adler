@@ -5,27 +5,33 @@
     .article-proposal__opinion
       -if @message.category_id == 1
         - @category1.each do |m|
-          = m.memo
+          %li
+            = m.memo
 
       -if @message.category_id == 2
         - @category2.each do |m|
-          = m.memo
+          %li
+            = m.memo
 
       -if @message.category_id == 3
         - @category3.each do |m|
-          = m.memo
+          %li
+            = m.memo
 
       -if @message.category_id == 4
         - @category4.each do |m|
-          = m.memo
+          %li
+            = m.memo
 
       -if @message.category_id == 5
         - @category5.each do |m|
-          = m.memo
+          %li
+            = m.memo
 
       -if @message.category_id == 6
         - @category6.each do |m|
-          = m.memo
+          %li
+            = m.memo
 
 
 
