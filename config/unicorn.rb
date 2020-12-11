@@ -1,10 +1,8 @@
-#サーバ上でのアプリケーションコードが設置されているディレクトリを変数に入れておく
+# ../が一つ増えている
 app_path = File.expand_path('../../../', __FILE__)
 
-#アプリケーションサーバの性能を決定する
 worker_processes 1
-
-#アプリケーションの設置されているディレクトリを指定
+# currentを指定
 working_directory "#{app_path}/current"
 
 # それぞれ、sharedの中を参照するよう変更
