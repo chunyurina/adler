@@ -4,6 +4,7 @@
 
 
 .toppage {
+  font-family: serif;
   height: 100vh;
   width: 100vw;
   background-image: image-url("sebastian-unrau-sp-p7uuT0tw-unsplash.jpg");
@@ -60,15 +61,20 @@
   }
   .main {
     font-size: 25px;
-    font-family: "Source Sans Pro", Helvetica, Arial, "游ゴシック体", "YuGothic", "メイリオ", "Meiryo", sans-serif;
     height: 99%;
     text-shadow: 2px 2px 3px black;
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
+    .welcome {
+      color: #fff;
+      font-family: cursive;
+      padding-bottom: 30px;
+    }
     .message {
       color: #fff;
+      text-align: center;
     }
     
   }

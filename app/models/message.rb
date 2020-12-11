@@ -9,5 +9,5 @@ class Message < ApplicationRecord
   belongs_to :user
 
   validates :memo, null: false
-  validates :category_id, null: false
+  validates :category_id, presence: true
 end

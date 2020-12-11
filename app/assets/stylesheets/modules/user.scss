@@ -1,5 +1,6 @@
 // 新規登録画面
 .SignupPage {
+  font-family: serif;
   color: #fff;
   text-shadow: 2px 2px 3px black;
   background-image: image-url("sebastian-unrau-sp-p7uuT0tw-unsplash.jpg");
@@ -8,7 +9,6 @@
   background-position: top center;
   width: 100%;
   padding: 40px 0px;
-  border-radius: 5px;
   h3 {
     margin-top: 50px;
     text-align: center;
@@ -70,7 +70,8 @@
       margin-top: 50px;
       text-align: center;
       .UserButton {
-        font-size: 20px;
+        font-family: cursive;
+        font-size: 25px;
         text-shadow: 2px 2px 3px black;
         line-height: 50px;
         letter-spacing: 1px;
@@ -89,6 +90,7 @@
 
 // ログイン画面
 .loginPage {
+  font-family: serif;
   height: 100vh;
   color: #fff;
   text-shadow: 2px 2px 3px black;
@@ -154,7 +156,8 @@
 .loginactions {
   margin-top: 50px;
   .loginButton {
-    font-size: 20px;
+    font-family: cursive;
+    font-size: 25px;
     text-shadow: 2px 2px 3px black;
     line-height: 50px;
     letter-spacing: 1px;
