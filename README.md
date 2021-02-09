@@ -49,15 +49,6 @@ belongs_to: user
 #### Association
 belongs_to: user
 
-## 第三者の感想
-- 使用者数：〇〇
-- 意見：
-- ユーザー1…
-- ユーザー2…
-- ユーザー3…
-
-## 今後の改善案
-
 
 
 
